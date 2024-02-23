@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 class Train:
     def __init__(self, destination: str, train_number: int, departure_time: datetime):
         """Ініціалізатор класу Train.
@@ -15,48 +14,47 @@ class Train:
 
     @property
     def destination(self) -> str:
-        """Повертає пункт призначення потягу
-        :return: пункт призначення потягу
-        """
+        """Повертає пункт призначення потягу."""
         return self._destination
+
+    @destination.setter
+    def destination(self, value: str):
+        """Встановлює пункт призначення потягу."""
+        self._destination = value
 
     @property
     def train_number(self) -> int:
-        """Повертає номер потягу
-        :return: номер потягу
-        """
+        """Повертає номер потягу."""
         return self._train_number
+
+    @train_number.setter
+    def train_number(self, value: int):
+        """Встановлює номер потягу."""
+        self._train_number = value
 
     @property
     def departure_time(self) -> datetime:
-        """ Повертає час відправлення потягу
-        :return: час відправлення потягу
-        """
+        """ Повертає час відправлення потягу."""
         return self._departure_time
+
+    @departure_time.setter
+    def departure_time(self, value: datetime):
+        """Встановлює час відправлення потягу."""
+        self._departure_time = value
 
     @staticmethod
     def sort_trains_by_number(train_list: list) -> list:
-        """Сортує список потягів за номерами.
-        :param train_list: Список об'єктів класу Train.
-        :return: Відсортований список потягів за номерами.
-        """
+        """Сортує список потягів за номерами."""
         return sorted(train_list, key=lambda train: train.train_number)
 
     @staticmethod
     def get_train_info_by_number(train_list: list, number: int) -> list:
-        """Повертає інформацію про потяги з заданим номером
-        :param train_list: Список об'єктів класу Train
-        :param number: Номер потягу
-        :return: Список об'єктів класу Train, які мають вказаний номер.
-        """
+        """Повертає інформацію про потяги з заданим номером."""
         return [train for train in train_list if train.train_number == number]
 
     @staticmethod
     def sort_trains_by_destination_and_time(train_list: list) -> list:
-        """Сортує список потягів за пунктом призначення та часом відправлення
-        :param train_list: Список об'єктів класу Train.
-        :return: Відсортований список потягів за пунктом призначення та часом відправлення.
-        """
+        """Сортує список потягів за пунктом призначення та часом відправлення."""
         return sorted(train_list, key=lambda train: (train.destination, train.departure_time))
 
 
