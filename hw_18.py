@@ -21,16 +21,12 @@ with connect('Chinook_Sqlite.sqlite') as con:
 #
 # print(cur.fetchall())
 #
-# cur.execute(''' SELECT *
-#                     FROM Invoice
-#                     ORDER BY InvoiceDate ASC
-#                     LIMIT 1''')
+# cur.execute(''' SELECT MIN(InvoiceDate)
+#                     FROM Invoice''')
 #
 # print(cur.fetchall())
 #
-cur.execute('''SELECT *
-                FROM Invoice
-                ORDER BY InvoiceDate DESC
-                LIMIT 1''')
+cur.execute('''SELECT MAX(InvoiceDate)
+                FROM Invoice ''')
 
 print(cur.fetchall())
