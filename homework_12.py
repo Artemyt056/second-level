@@ -98,4 +98,3 @@ print("Кількість студентів з рейтингом 'very good':"
 print("Кількість студентів з рейтингом 'good':", sr.get_good_count())
 print("Кількість студентів з рейтингом 'satisfactory':", sr.get_satisfactory_count())
 print("Всі рейтинги:", sr.to_string())
-
